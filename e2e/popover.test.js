@@ -5,7 +5,9 @@ describe("Popover Widget", () => {
   let page;
 
   beforeAll(async () => {
-    browser = await puppeteer.launch({ headless: "new" });
+    browser = await puppeteer.launch({
+      headless: "new",
+    });
     page = await browser.newPage();
     await page.goto("http://localhost:9000/");
   });
