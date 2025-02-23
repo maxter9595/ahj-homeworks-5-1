@@ -7,10 +7,11 @@ describe("Popover Widget", () => {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       headless: "new",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     page = await browser.newPage();
     await page.goto("http://localhost:9000/");
-  });
+  }, 30000);
 
   afterAll(async () => {
     await browser.close();
